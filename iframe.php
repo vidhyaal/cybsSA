@@ -1,20 +1,26 @@
-<html>
-<head>
-    <title>Secure Acceptance - Payment Form Example</title>
-    <link rel="stylesheet" type="text/css" href="payment.css"/>
-    <link rel="stylesheet" href="cart.css">
-    <script type="text/javascript" src="jquery-1.7.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="payment.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="cart.js"></script>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php
+    $url = "http://localhost/cybs/iFrame.php?" . $_SERVER['QUERY_STRING'];
+    $html_select = file_get_contents($url);
+    echo $html_select;
+?>
+<!DOCTYPE HTML>
+<HTML>
+   <head>
+      <title>Simple JS Cart</title>
+      <!-- (A) CSS + JS -->
+      <link rel="stylesheet" href="cart.css">
+      <script src="products.js"></script>
+      <script src="cart.js"></script>
+   </head>
+   <body>
+    <div id="cart-wrap">
+      <!-- (B) PRODUCTS LIST -->
+      <div id="cart-products"></div>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-</head>
-<body>
-<form name="shopping" method="post" id="shopping" action="payment_confirmation.php">
+      <!-- (C) CURRENT CART -->
+      <div id="cart-items"></div>
+      <div id="iFrameDisplay"></div>
+      <form name="shopping" method="post" id="shopping" action="payment_form.php">
              <input type="hidden" name="access_key" value="23879b2b57323605932e40d2884de6d2">
               <input type="hidden" name="profile_id" value="488DF726-70E4-4690-8627-FAF66FB44E18">
               <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
@@ -24,7 +30,7 @@
               <input type="hidden" name="locale" value="en">
               <input type="hidden" name="transaction_type" value="sale" size="25">
             <input type="hidden" name="reference_number" value="cptsale123" size="25">
-            <input type="hidden" name="amount" id="amt" size="25" name='amt' value=''/>
+            <input type="hidden" name="amount" id="amt" size="25" name='amt' value="">
             <input type="hidden" name="currency" size="25" value="USD">
             <input type="hidden" name="bill_to_forename" value="V"/>
             <input type="hidden" name="bill_to_surname" value='AL'/>
@@ -35,12 +41,10 @@
           <input type="hidden" name="bill_to_email" value="test@test.test"/> 
         <input type="hidden" name="bill_to_address_postal_code" value="600073"/>
 </form>
-<script>
-    window.onload = function(){
-		alert(document.getElementById('amt').value;
-  document.getElementById('shopping').submit();
-}
-</script>
 
-</body>
-</html>
+    </div>
+  </body>
+  
+</HTML>
+<?php
+?>

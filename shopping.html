@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<HTML>
+   <head>
+      <title>Simple JS Cart</title>
+      <!-- (A) CSS + JS -->
+      <link rel="stylesheet" href="cart.css">
+      <script src="products.js"></script>
+      <script src="cart.js"></script>
+   </head>
+   <body>
+      <div id="cart-wrap">
+         <!-- (B) PRODUCTS LIST -->
+         <form name="shopping" method="post" action="payment_form.php">
+             <input type="hidden" name="access_key" value="23879b2b57323605932e40d2884de6d2">
+    <input type="hidden" name="profile_id" value="488DF726-70E4-4690-8627-FAF66FB44E18">
+    <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
+    <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
+    <input type="hidden" name="unsigned_field_names" value="bill_to_forename,bill_to_surname,bill_to_address_line1,bill_to_address_city,bill_to_address_state,bill_to_address_postal_code,bill_to_address_country,bill_to_email"/>
+    <input type="hidden" name="signed_date_time" value="<?php echo gmdate("Y-m-d\TH:i:s\Z"); ?>">
+    <input type="hidden" name="locale" value="en">
+       <input type="hidden" name="transaction_type" value="sale" size="25">
+            <input type="hidden" name="reference_number" value="cptsale123" size="25">
+            <input type="hidden" name="amount" size="25" value="1.00">
+            <input type="hidden" name="currency" size="25" value="USD">
+            <!-- Tax:</span><input type="hidden" name="tax_amount" size="25" value="0.0"/></br> -->
+            <input type="hidden" name="bill_to_forename" value="V"/>
+            <input type="hidden" name="bill_to_surname" value='AL'/>
+           <input type="hidden" name="bill_to_address_line1" value="2211"/>
+           <input type="hidden" name="bill_to_address_state" value="BL"/>
+          <input type="hidden" name="bill_to_address_city" value="Chennai"/> 
+            <input type="hidden" name="bill_to_address_country" value="IN"/> 
+          <input type="hidden" name="bill_to_email" value="test@test.test"/> 
+        <input type="hidden" name="bill_to_address_postal_code" value="600073"/>
+
+         <div id="cart-products">
+            <div class="p-item">
+               <img src="images/dummy-pdt-b.jpg" class="p-img">
+               <div class="p-name">MokBook Thicc</div>
+               <div class="p-desc">Greatest properly off ham exercise all.</div>
+               <div class="p-price">$2034</div>
+               <input type="button" value="Add to Cart" class="cart p-add" data-id="123">
+            </div>
+            <div class="p-item">
+               <img src="images/dummy-pdt-b.jpg" class="p-img">
+               <div class="p-name">MokBook Rookie</div>
+               <div class="p-desc">Unsatiable its possession nor off.</div>
+               <div class="p-price">$1247</div>
+               <input type="button" value="Add to Cart" class="cart p-add" data-id="124">
+            </div>
+            <div class="p-item">
+               <img src="images/dummy-pdt-a.jpg" class="p-img">
+               <div class="p-name">iPong Max</div>
+               <div class="p-desc">All difficulty unreserved the solicitude.</div>
+               <div class="p-price">$675</div>
+               <input type="button" value="Add to Cart" class="cart p-add" data-id="125">
+            </div>
+            <div class="p-item">
+               <img src="images/dummy-pdt-a.jpg" class="p-img">
+               <div class="p-name">iTab Pok</div>
+               <div class="p-desc">Had judgment out property the supplied. </div>
+               <div class="p-price">$842</div>
+               <input type="button" value="Add to Cart" class="cart p-add" data-id="126">
+            </div>
+         </div>
+         <!-- (C) CURRENT CART -->
+         <div id="cart-items">
+            <div class="c-item">
+               <div class="c-name">MokBook Thicc</div>
+               <input type="button" value="X" data-id="123" class="c-del cart"><input type="number" data-id="123" class="c-qty">
+            </div>
+            <input type="button" value="Empty" class="c-empty cart"><input type="submit" value="Checkout - $2034" class="c-checkout cart">
+         </div>
+      </div>
+      </form>
+   </body>
+</HTML>
