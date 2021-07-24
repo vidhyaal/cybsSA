@@ -16,6 +16,10 @@ input.cart, button.cart {
   cursor: pointer;
 }
 
+#iframeDisplay{
+	visibility:hidden;
+}
+
 /* (B) PRODUCTS LIST */
 #cart-products {
   display: grid;

@@ -23,6 +23,7 @@ var cart = {
       cart.items = {};
       localStorage.removeItem("cart");
       cart.list();
+	  document.getElementById('iFrameDisplay').innerHTML='';
     }
   },
 
@@ -149,6 +150,7 @@ var cart = {
       item.addEventListener("click", cart.nuke);
       item.className = "c-empty cart";
       cart.hItems.appendChild(item);
+	  
 
       // CHECKOUT BUTTONS
       item = document.createElement("input");
@@ -158,8 +160,8 @@ var cart = {
       item.className = "c-checkout cart";
       cart.hItems.appendChild(item);
      // shopping.document.getElementById('shopping').amt.value=total;
-      oFormObject=document.forms['shopping']['amt'];
-      oFormElement=oFormObject.value=total;  
+      oFormObject=document.forms['shopping'];
+      oFormElement=oFormObject.elements['amt'].value=total;  
       alert(oFormElement);
 	  
     }
@@ -212,21 +214,31 @@ var cart = {
     // PAYMENT
     // WHATEVER IS REQUIRED
 
-    //In case of hosted Checkout uncomment the below line
-    //document.getElementById("shopping").submit();
-    // var iframe= document.createElement('iframe');
-    // iframe.src= 'payment_confirmation.php';
-    // iframe.width=iframe.height= '100%';
-    // document.getElementById('iFrameDisplay').appendChild(iframe);
-   
-  // document.getElementById("iFrameDisplay") = '<iframe src="payment_form.php" name="payment"  width="100%" height="100%"></iframe>';
+	// get the filename 
+	
+	var url = window.location.pathname;
+var filename = url.substring(url.lastIndexOf('/')+1);
+alert(filename);
+    //In case of iFrame  uncomment the below line
+	if (filename=='iframe.php')
+	{
+     var iframe= document.createElement('iframe');
+     iframe.src= 'payment_form.php?amt='+oFormElement;
+     iframe.width=iframe.height= '100%';
+     document.getElementById('iFrameDisplay').appendChild(iframe); 
+	}
+	
+   else if (filename=='index.php' || filename =='')
+   {
+	   
   
+  //next 3 lines working code for Hosted checkout
   
- alert(document.forms['shopping']['amt'].value);
-     location.href='payment_form.php';
-   document.getElementById("shopping").submit();
-
-
+alert(oFormElement)
+  
+   location.href='payment_form.php';
+document.getElementById("shopping").submit(); 
+   }
     /*p 
     var data = new FormData();
     data.append('cart', JSON.stringify(cart.items));

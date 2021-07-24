@@ -1,0 +1,71 @@
+
+Adyen Tech Test
+Question Title
+2. A man has to get a fox, a chicken, and a sack of corn across a river.
+He has a rowboat, and it can only carry him and one other thing.
+
+If the fox and the chicken are left together, the fox will eat the chicken.
+If the chicken and the corn are left together, the chicken will eat the corn.
+
+How does the man do it in the least number of moves possible?
+1. He takes chicken and leaves on the other bank
+2. He takes the fox, leaves it but bring along the chicken back with him.
+3. He takes the corn sack and leaves chicken now on the first bank,  drops the corn sack with fox on the other side 
+4. finally he takes back the chicken to the other side 
+
+Question Title
+3. Evaluate the following pseudocode example: 
+
+for(int $i=0; $i < 10; $i++) {
+ echo $i;
+}
+
+What is the output?
+0123456789
+Question Title
+4. You have a SQL database table (called "products") that contains the following columns:
+
+id (int)
+price (double)
+date (datetime)
+
+This table stores all changes to a products price over time. Write a query to determine the price of the product with id 123321 on the 02-01-2018. 
+
+ 
+select price from products where id=123321 and date='02/01/2018'
+Question Title
+5. You are integrating a third party provider on your website via API. The provider offers both SOAP and REST style interfaces as part of the integration. Which option would you choose and why?
+ I would prefer REST. REST providers superior performance , supports variety of data formats, Easier to work
+Question Title
+6. Evaluate the below equations: 
+
+2 + 5 = 12
+3 + 6 = 21
+8 + 11 = ?
+
+Find the answer to the final equation. Show working if necessary.  
+
+ 
+2x5+2=12
+3x6+3=21
+8x11+8=96
+Question Title
+7. Imagine you have an Adyen POS terminal connected to your LAN. The terminal is running a server located here: 
+
+https://192.168.0.10:8443/nexo/
+
+The terminal should respond both at a network address level, as well as to HTTP POST requests. You are trying to communicate with the terminal, however, it is not working. What steps would you take to troubleshoot the connection? Please list your troubleshooting steps and commands, using the software and/or operating system of your choice. 
+
+ 
+1. Check if the LAN cable connectivity is proper.
+2. From the command prompt enter the command
+   ping 192.168.0.10:8443
+We will get a response if the host is active and configured. Otherwise no responses will be received.
+3. Try tracert command in windows and traceroute in Mac,  to find the number of hops and if there is any hangs between the hops indicated by *
+     tracert  192.168.0.10
+ PREV DONE
+Powered by
+SurveyMonkey
+See how easy it is to create a survey.
+7 of 7 answered
+ 

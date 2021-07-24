@@ -24,9 +24,9 @@
               <input type="hidden" name="locale" value="en">
               <input type="hidden" name="transaction_type" value="sale" size="25">
             <input type="hidden" name="reference_number" value="cptsale123" size="25">
-            <input type="hidden" name="amount" id="amt" size="25" name='amt' value=''/>
+            <input type="hidden" name="amount" id="amt" size="25" name='amt' value=''>
             <input type="hidden" name="currency" size="25" value="USD">
-            <input type="hidden" name="bill_to_forename" value="V"/>
+            <input type="hidden" name="bill_to_forename" value="V">
             <input type="hidden" name="bill_to_surname" value='AL'/>
            <input type="hidden" name="bill_to_address_line1" value="2211"/>
            <input type="hidden" name="bill_to_address_state" value="CL"/>
@@ -36,10 +36,14 @@
         <input type="hidden" name="bill_to_address_postal_code" value="600073"/>
 </form>
 <script>
-    window.onload = function(){
-		alert(document.getElementById('amt').value;
-  document.getElementById('shopping').submit();
-}
+	window.onload=function(){
+		var qString = location.search;
+  if (qString.indexOf('amt') != -1) {
+     var data = qString.substring(qString.indexOf('=') + 1, qString.length);
+     document.forms[0].amt.value = data;
+    }
+		document.shopping.submit();
+	}	
 </script>
 
 </body>

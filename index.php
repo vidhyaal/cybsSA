@@ -33,7 +33,7 @@
             <input type="hidden" name="bill_to_forename" value="V"/>
             <input type="hidden" name="bill_to_surname" value='AL'/>
            <input type="hidden" name="bill_to_address_line1" value="2211"/>
-           <input type="hiden" name="bill_to_address_state" value="CL"/>
+           <input type="hidden" name="bill_to_address_state" value="CL"/>
           <input type="hidden" name="bill_to_address_city" value="Chennai"/> 
             <input type="hidden" name="bill_to_address_country" value="IN"/> 
           <input type="hidden" name="bill_to_email" value="test@test.test"/> 
